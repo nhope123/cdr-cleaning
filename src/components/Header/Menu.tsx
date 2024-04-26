@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { SxProps, Theme } from "@mui/material/styles";
-import React from "react";
 
 const buttonSx: SxProps<Theme> = {
   my: 2,

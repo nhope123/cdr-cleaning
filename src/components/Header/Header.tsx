@@ -1,7 +1,7 @@
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
-import React, { FC } from "react";
+import { FC } from "react";
 import Logo from "./Logo";
 import Menu from "./Menu";
 
