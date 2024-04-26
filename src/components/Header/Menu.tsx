@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { SxProps, Theme } from "@mui/material/styles";
-import React, { useState } from "react";
+import React from "react";
 
 const buttonSx: SxProps<Theme> = {
   my: 2,
@@ -14,16 +14,17 @@ const containerSx: SxProps<Theme> = {
   justifyContent: "flex-end",
 };
 
-const activeSx: SxProps<Theme> = {
-  color: "#f74bbd",
-};
+// const activeSx: SxProps<Theme> = {
+//   color: "#f74bbd",
+// };
 const pages = ["Home", "Services", "Contact"];
 
 const Menu = () => {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  // const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    // setAnchorElNav(null);
+    alert("clicked");
   };
   return (
     <Box sx={containerSx}>
