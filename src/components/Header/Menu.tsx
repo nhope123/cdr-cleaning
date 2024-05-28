@@ -16,7 +16,7 @@ const containerSx: SxProps<Theme> = {
 // const activeSx: SxProps<Theme> = {
 //   color: "#f74bbd",
 // };
-const pages = ["Home", "Services", "Contact"];
+const pages = ["Home", "About Us", "Services", "Contact"];
 
 const Menu = () => {
   // const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -25,6 +25,7 @@ const Menu = () => {
     // setAnchorElNav(null);
     alert("clicked");
   };
+
   return (
     <Box sx={containerSx}>
       {pages.map((page) => (

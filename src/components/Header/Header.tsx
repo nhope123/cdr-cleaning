@@ -21,7 +21,13 @@ const Header: FC = () => {
   // };
 
   return (
-    <AppBar sx={{ backgroundColor: "red" }}>
+    <AppBar
+      sx={{
+        backgroundColor: "rgba(0, 0, 0, 0)",
+        boxShadow: 0,
+        position: "relative",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters={false}>
           <Logo />
