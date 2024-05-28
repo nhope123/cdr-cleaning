@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
 const containerSx: SxProps<Theme> = {
-  // backgroundImage: `url(${wave})`,
+  
   width: "100vw",
   height: "100vh",
   backgroundPosition: "bottom left",

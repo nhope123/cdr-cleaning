@@ -6,10 +6,14 @@ interface CardsProps {
   title: string;
 }
 
+const containerSx = {
+  height: "264px",
+};
+
 const Cards: React.FC<PropsWithChildren<CardsProps>> = (props) => {
   const { children, title } = props;
   return (
-    <Card>
+    <Card sx={containerSx}>
       <CardHeader title={title} />
       <CardContent>{children}</CardContent>
     </Card>

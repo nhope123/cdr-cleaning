@@ -1,8 +1,8 @@
 import { List, ListItem, SxProps, Theme } from "@mui/material";
 import Box from "@mui/material/Box";
 import React from "react";
-import Cards from "./Cards";
 import AboutUs from "./AboutUs";
+import Cards from "./Cards";
 
 interface Props {
   // Define your component's props here
@@ -10,10 +10,20 @@ interface Props {
 
 const cardContainerSx: SxProps<Theme> = {
   display: "flex",
-  flexDirection: "row",
+  flexDirection: { xs: "column", md: "row" },
   justifyContent: "space-between",
   alignItems: "center",
-  // gap: "1rem",
+  gap: "48px",
+};
+
+const containerSx: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  // flexGrow: 1,
+  minHeight: "100vh",
+  width: "100%",
 };
 
 // const header = "About Us";
@@ -46,7 +56,7 @@ const specialServices = {
 
 const Services: React.FC<Props> = () => {
   return (
-    <Box>
+    <Box sx={containerSx}>
       <AboutUs />
       {/* <Typography variant="h4">{header}</Typography> */}
       <Box sx={cardContainerSx}>

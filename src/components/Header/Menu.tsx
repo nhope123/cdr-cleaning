@@ -5,7 +5,12 @@ import { SxProps, Theme } from "@mui/material/styles";
 const buttonSx: SxProps<Theme> = {
   my: 2,
   display: "block",
-  color: "#f74bbd",
+  color: "black", // "#b51656",
+  // fontWeight: 600,
+  "&:hover": {
+    color: "#b51656",
+    fontWeight: 600,
+  },
 };
 const containerSx: SxProps<Theme> = {
   flexGrow: 1,
@@ -13,23 +18,23 @@ const containerSx: SxProps<Theme> = {
   justifyContent: "flex-end",
 };
 
-// const activeSx: SxProps<Theme> = {
-//   color: "#f74bbd",
-// };
 const pages = ["Home", "About Us", "Services", "Contact"];
 
 const Menu = () => {
-  // const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-
-  const handleCloseNavMenu = () => {
-    // setAnchorElNav(null);
-    alert("clicked");
-  };
+  // const handleCloseNavMenu = () => {
+  //   alert("clicked");
+  // };
 
   return (
     <Box sx={containerSx}>
       {pages.map((page) => (
-        <Button key={page} onClick={handleCloseNavMenu} sx={buttonSx}>
+        <Button
+          LinkComponent={`a`}
+          href={`#${page}`}
+          key={page}
+          // onClick={handleCloseNavMenu}
+          sx={buttonSx}
+        >
           {page}
         </Button>
       ))}
