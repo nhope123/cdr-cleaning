@@ -4,36 +4,26 @@ import Toolbar from "@mui/material/Toolbar";
 import { FC } from "react";
 import Logo from "./Logo";
 import Menu from "./Menu";
+import MobileMenu from "./MobileMenu";
 
-// const pages = ["Home", "Services", "Contact"];
+const pages = ["Home", "About Us", "Contact"];
 
 const Header: FC = () => {
-  // const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-  //   null
-  // );
-
-  // const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-
-  // const handleCloseNavMenu = () => {
-  //   setAnchorElNav(null);
-  // };
 
   return (
     <AppBar
       sx={{
         backgroundColor: "#fff",
         boxShadow: 1,
-        // opacity: 1,
-
-        // position: "relative",
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters={false}>
+        <Toolbar disableGutters={false} sx={{
+          justifyContent: { xs: "flex-start", md: "space-between" },
+        }}>
+          <MobileMenu menuItems={pages}/>
           <Logo />
-          <Menu />
+          <Menu menuItems={pages}/>
         </Toolbar>
       </Container>
     </AppBar>

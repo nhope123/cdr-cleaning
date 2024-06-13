@@ -1,12 +1,10 @@
 import { List, ListItem, SxProps, Theme } from "@mui/material";
 import Box from "@mui/material/Box";
-import React from "react";
+import wave from "../../assets/wave.svg";
 import AboutUs from "./AboutUs";
 import Cards from "./Cards";
 
-interface Props {
-  // Define your component's props here
-}
+
 
 const cardContainerSx: SxProps<Theme> = {
   display: "flex",
@@ -21,12 +19,17 @@ const containerSx: SxProps<Theme> = {
   flexDirection: "column",
   justifyContent: "space-evenly",
   alignItems: "center",
-  // flexGrow: 1,
   minHeight: "100vh",
   width: "100%",
+  background: "url(" + wave + ") no-repeat center",
+  pb: 5,
 };
 
-// const header = "About Us";
+const serviceSx: SxProps<Theme> = { 
+  pt: {xs: '48px', md: 0},
+  display: "flex",
+  justifyContent: "center",
+}
 
 const services = [
   {
@@ -54,11 +57,10 @@ const specialServices = {
   ],
 };
 
-const Services: React.FC<Props> = () => {
+const Services= () => {
   return (
-    <Box sx={containerSx}>
+    <Box id="About Us" sx={containerSx}>
       <AboutUs />
-      {/* <Typography variant="h4">{header}</Typography> */}
       <Box sx={cardContainerSx}>
         {services.map((s) => (
           <Cards key={s.title} title={s.title}>
@@ -70,8 +72,8 @@ const Services: React.FC<Props> = () => {
           </Cards>
         ))}
       </Box>
-      <Box>
-        <Cards key={specialServices.title} title={specialServices.title}>
+      <Box sx={serviceSx}>
+        <Cards key={specialServices.title} title={specialServices.title} >
           <List>
             {specialServices.services.map((i) => (
               <ListItem key={`${specialServices.title}-${i}`}>{i}</ListItem>

@@ -1,5 +1,4 @@
 import { Box, SxProps, Theme } from "@mui/material";
-import "./App.css";
 import Content from "./components/Content/Content";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";

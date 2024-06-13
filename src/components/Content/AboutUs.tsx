@@ -6,10 +6,8 @@ const containerSx = {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  // flexGrow: 1,
-
-  // height: "100vh",
   width: "100%",
+  p: 3,
 };
 const content =
   "We are dedicated to providing top-notch cleaning services for both commercial and residential properties. Our team is committed to ensuring your space is spotless and inviting.";
@@ -17,15 +15,10 @@ const title = "About Us";
 
 const AboutUs: React.FC = () => {
   return (
-    <Box sx={containerSx}>
-      <h1>{title}</h1>
+    <Box  sx={containerSx}>
+      <h1 >{title}</h1>
       <Typography
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+        textAlign="center"     >
         {content}
       </Typography>
     </Box>

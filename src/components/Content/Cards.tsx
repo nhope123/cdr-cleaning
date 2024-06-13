@@ -1,4 +1,4 @@
-import { CardContent, CardHeader } from "@mui/material";
+import { CardContent, CardHeader, SxProps, Theme } from "@mui/material";
 import Card from "@mui/material/Card";
 import React, { PropsWithChildren } from "react";
 
@@ -6,15 +6,22 @@ interface CardsProps {
   title: string;
 }
 
-const containerSx = {
-  height: "264px",
+const containerSx: SxProps<Theme> = {
+  minHeight: "282px",
+  boxShadow: 2,
+  maxWidth: "90%",
+};
+
+const headerSx: SxProps<Theme> = {
+  color: "#b51656",
+  borderBottom: "1px solid #b51656",
 };
 
 const Cards: React.FC<PropsWithChildren<CardsProps>> = (props) => {
   const { children, title } = props;
   return (
     <Card sx={containerSx}>
-      <CardHeader title={title} />
+      <CardHeader sx={headerSx} title={title} />
       <CardContent>{children}</CardContent>
     </Card>
   );

@@ -1,12 +1,16 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { SxProps, Theme } from "@mui/material/styles";
+import { FC } from "react";
+
+interface MenuProps {
+  menuItems: string[];
+}
 
 const buttonSx: SxProps<Theme> = {
   my: 2,
   display: "block",
-  color: "black", // "#b51656",
-  // fontWeight: 600,
+  color: "#b51656",
   "&:hover": {
     color: "#b51656",
     fontWeight: 600,
@@ -18,21 +22,15 @@ const containerSx: SxProps<Theme> = {
   justifyContent: "flex-end",
 };
 
-const pages = ["Home", "About Us", "Services", "Contact"];
 
-const Menu = () => {
-  // const handleCloseNavMenu = () => {
-  //   alert("clicked");
-  // };
-
+const Menu: FC<MenuProps> = ({ menuItems}) => {
   return (
     <Box sx={containerSx}>
-      {pages.map((page) => (
+      {menuItems.map((page) => (
         <Button
           LinkComponent={`a`}
           href={`#${page}`}
           key={page}
-          // onClick={handleCloseNavMenu}
           sx={buttonSx}
         >
           {page}

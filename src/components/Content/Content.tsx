@@ -16,6 +16,7 @@ const mainSx: SxProps<Theme> = {
   alignItems: "center",
   flexGrow: 1,
   flexShrink: 1,
+  
 };
 
 const Content: React.FC<Props> = () => {

@@ -1,7 +1,7 @@
 import { Theme } from "@emotion/react";
 import { Box, Button, SxProps, Typography } from "@mui/material";
 import React from "react";
-import wave from "../../assets/wave.svg";
+import unSplash from "../../assets/unsplash.jpg";
 
 const containerSx: SxProps<Theme> = {
   display: "flex",
@@ -13,7 +13,9 @@ const containerSx: SxProps<Theme> = {
   minHeight: "100vh",
   width: "100%",
   rowGap: 5,
-  backgroundImage: `url(${wave})`,
+  p: 3,
+  backgroundRepeat: "no-repeat",background: "url(" + unSplash + ") no-repeat center center / cover",
+  
 };
 
 const buttonSx: SxProps<Theme> = {
@@ -30,10 +32,12 @@ const SUB_HEADLINE =
 const QUOTE = "Get a Free Quote";
 
 const Hero: React.FC = () => (
-  <Box id="home" sx={containerSx}>
-    <Typography variant="h4">{HEADLINE}</Typography>
-    <Typography variant="h5">{SUB_HEADLINE}</Typography>
-    <Button variant="contained" sx={buttonSx}>
+  <Box id="Home" sx={containerSx}>
+    <Typography textAlign="center" variant="h4">{HEADLINE}</Typography>
+    <Typography textAlign="center" variant="h5">{SUB_HEADLINE}</Typography>
+    <Button variant="contained" sx={buttonSx} onClick={() => {
+      window.location.href = "#Contact";
+    }}>
       {QUOTE}
     </Button>
   </Box>
