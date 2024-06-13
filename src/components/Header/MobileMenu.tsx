@@ -17,7 +17,7 @@ const containerSx = {
   
 };
 
-const color = "#b51656";
+const color = "primary.main";
 
 const textSx: SxProps<Theme> = { color };
 

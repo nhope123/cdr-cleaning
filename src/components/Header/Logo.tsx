@@ -8,36 +8,31 @@ const containerSx: SxProps<Theme> = {
   alignItems: "flex-start",
   flexDirection: "column",
   justifyContent: "flex-start",
-  // flexGrow: 1,
-  // flexShrink: 1,
+  textDecoration: "none",
+  '& > a': {
+    color: "primary.main",
+    textDecoration: "none",    
+  },
 };
 
-// const iconSx: SxProps<Theme> = {
-//   display: { xs: "none", md: "flex" },
-//   mr: 1,
-// };
-
 const textSx: SxProps<Theme> = {
-  mr: 2,
   display: { xs: "none", md: "flex" },
   fontFamily: "monospace",
+  fontStyle: "normal",
   fontWeight: 700,
   letterSpacing: ".3rem",
-  textDecoration: "none",
-  color: "#a42d8b",
+  mr: 2,  
 };
 
 const MOTTO = "Cleaning Done Right";
 
 const Logo = () => {
   return (
-    <Box sx={containerSx}>
+    <Box component={"a"} href="/" sx={containerSx}>
       <img alt="company logo" src={logo} />
       <Typography
         variant="caption"
         noWrap
-        component="a"
-        href="#app-bar-with-responsive-menu"
         sx={textSx}
       >
         {MOTTO}

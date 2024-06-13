@@ -13,8 +13,9 @@ const containerSx: SxProps<Theme> = {
 };
 
 const headerSx: SxProps<Theme> = {
-  color: "#b51656",
-  borderBottom: "1px solid #b51656",
+  color:  "primary.main",
+  borderBottom: (theme) => `1px solid ${theme.palette.primary.main}`,
+  textAlign: "center",
 };
 
 const Cards: React.FC<PropsWithChildren<CardsProps>> = (props) => {

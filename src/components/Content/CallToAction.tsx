@@ -20,7 +20,7 @@ const quoteSx: SxProps<Theme> = {
 
 const textSx: SxProps<Theme> = {
   textDecoration: "unset",
-  color: "#b51656",
+  color: "primary.main",
 };
 const title = "For your Free Quote";
 

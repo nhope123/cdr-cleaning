@@ -10,9 +10,9 @@ interface MenuProps {
 const buttonSx: SxProps<Theme> = {
   my: 2,
   display: "block",
-  color: "#b51656",
+  color:  "primary.main",
   "&:hover": {
-    color: "#b51656",
+    color:  "primary.main",
     fontWeight: 600,
   },
 };

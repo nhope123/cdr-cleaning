@@ -19,10 +19,11 @@ const containerSx: SxProps<Theme> = {
 };
 
 const buttonSx: SxProps<Theme> = {
-  backgroundColor: "#b51656",
+  backgroundColor:  "primary.main",
   fontWeight: 700,
   "&:hover": {
-    backgroundColor: "#f74bbd",
+    backgroundColor: "primary.light",
+
   },
 };
 
