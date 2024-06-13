@@ -4,8 +4,6 @@ import wave from "../../assets/wave.svg";
 import AboutUs from "./AboutUs";
 import Cards from "./Cards";
 
-
-
 const cardContainerSx: SxProps<Theme> = {
   display: "flex",
   flexDirection: { xs: "column", md: "row" },

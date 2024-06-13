@@ -25,7 +25,7 @@ const MOTTO = "Cleaning Done Right";
 
 const Logo = () => {
   return (
-    <Box component={"a"} href="/" sx={containerSx}>
+    <Box component={"a"} href="/cdr-cleaning" sx={containerSx}>
       <img alt="company logo" src={logo} />
       <Typography
         variant="caption"
