@@ -9,10 +9,7 @@ const containerSx: SxProps<Theme> = {
   flexDirection: "column",
   justifyContent: "flex-start",
   textDecoration: "none",
-  '& > a': {
-    color: "primary.main",
-    textDecoration: "none",    
-  },
+  color: "primary.main", 
 };
 
 const textSx: SxProps<Theme> = {
