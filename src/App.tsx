@@ -17,7 +17,6 @@ const containerSx: SxProps<Theme> = {
 
 const card1Sx: SxProps<Theme> = { 
   p: { xs: 1, md: 4 }, 
-  mb: 4,
   display: 'flex',
   flexDirection: { xs: 'column', md: 'row' },
   background: 'linear-gradient(135deg, #fff 60%, #E91E63 60%)',
@@ -95,7 +94,7 @@ const rootSx: SxProps<Theme> = {
   backgroundColor: theme => theme.palette.background.default,
   minHeight: '100%',
   overflowY: 'auto',
-  gap: 4,
+  gap: {xs: 6, md: 4},
 };
 
 const fontSizeSx: SxProps<Theme> = {
