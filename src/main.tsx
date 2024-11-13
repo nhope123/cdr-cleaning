@@ -3,6 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import './App.css';
 import App from "./App.tsx";
 
 const primaryMain = "#b51656";
