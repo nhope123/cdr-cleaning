@@ -88,7 +88,8 @@ const serviceTextSx: SxProps<Theme> = {
 const rootSx: SxProps<Theme> = { 
   justifyContent: 'space-between', 
   px: { xs: 1, md: 3 },
-  py: 3,
+  pt: 9,
+  pb: { xs: 10, md: 4 },
   display: 'flex',
   flexDirection: 'column',
   backgroundColor: theme => theme.palette.background.default,
@@ -143,7 +144,7 @@ const App = () => {
 
   return (
     <Container maxWidth="lg" sx={rootSx}>
-      <Box sx={{ textAlign: 'center', mt: 6 }}>
+      <Box sx={{ textAlign: 'center' }}>
         <Typography 
           variant="h3" 
           component="h1" 
