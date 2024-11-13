@@ -1,4 +1,4 @@
-import { Box, Button, Card, Container, List, ListItem, ListItemText, SxProps, Theme, Typography } from "@mui/material";
+import { Box, Button, Card, Container, List, ListItem, ListItemText, ListItemTextProps, SxProps, Theme, Typography } from "@mui/material";
 import { CleaningServicesRounded, EmailRounded, PhoneRounded } from "@mui/icons-material";
 import ImageFile from './assets/unsplash.jpg';
 
@@ -10,35 +10,51 @@ const containerSx: SxProps<Theme> = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 2,
-  mb: 2
+  mb: 2,
+  overflowY: 'auto',
+  overflowX: 'hidden', 
 };
 
 const card1Sx: SxProps<Theme> = { 
-  p: 4, 
+  p: { xs: 1, md: 4 }, 
   mb: 4,
   display: 'flex',
-
+  flexDirection: { xs: 'column', md: 'row' },
   background: 'linear-gradient(135deg, #fff 60%, #E91E63 60%)',
   position: 'relative',
   overflow: 'hidden',
+  boxShadow: 6,
 };
 
 const firstSx: SxProps<Theme> = { 
-  display: 'grid', 
-  gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+  display: 'flex', 
+  flexDirection: { xs: 'column', md: 'row' },
   gap: 4,
-  alignItems: 'center'
+  alignItems: 'center',
+  width: '100%',
+  justifyContent: { xs: 'flex-start', md: 'space-evenly' },
+  py: 2,
+  px: { xs: 1, md: 2 },
 };
 
 const card2Sx: SxProps<Theme> = { 
-  p: 4, 
+  px: { xs: 1, md: 4 },
+  py: 4, 
   bgcolor: '#E91E63', 
   color: 'white',
+  width: '100%',
+  boxShadow: 6,
 };
 
 const emailSx: SxProps<Theme> = { 
   bgcolor: 'white',
   color: '#E91E63',
+  maxWidth: '90%',
+  '& p': {
+    textWrap: 'nowrap',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+  },
   '&:hover': {
     bgcolor: 'rgba(255,255,255,0.9)'
   }
@@ -47,6 +63,7 @@ const emailSx: SxProps<Theme> = {
 const phoneSx: SxProps<Theme> = { 
   bgcolor: 'white',
   color: '#E91E63',
+  maxWidth: '100%',
   '&:hover': {
     bgcolor: 'rgba(255,255,255,0.9)'
   }
@@ -57,35 +74,58 @@ const footerSx: SxProps<Theme> = {
   flexDirection: { xs: 'column', sm: 'row' },
   gap: 3,
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  width: { xs: '100%', sm: 'auto' },
 };
 
 const serviceTextSx: SxProps<Theme> = { 
   color: '#E91E63',
   fontWeight: 'bold',
-  mb: 3
+  mb: 3,
+  textWrap: 'wrap',
+  textAlign: {xs: 'center', md: 'left'},
 };
 
 const rootSx: SxProps<Theme> = { 
   justifyContent: 'space-between', 
-  py: 4,
+  px: { xs: 1, md: 3 },
+  py: 3,
   display: 'flex',
   flexDirection: 'column',
   backgroundColor: theme => theme.palette.background.default,
-  height: '100% !important',
+  minHeight: '100%',
+  overflowY: 'auto',
+  gap: 4,
 };
 
-
+const fontSizeSx: SxProps<Theme> = {
+  fontSize: { xs: '1rem', md: '1.25rem' }
+};
 const imageSx: SxProps<Theme> = { 
   position: 'relative', 
   height: '400px', 
-  width: '400px',
+  width: { xs: '100%', md: '400px'},
   '& img': {
     border: 0,
     borderRadius: '8px',
-    boxShadow: 2,
+    boxShadow: 10,
+    width: '100%',
+    height: '100%',
   },
 };
+
+const listSx: SxProps<Theme> = {
+  textAlign: { xs: 'center', md: 'left' },
+};
+
+const aimSx: SxProps<Theme> = { 
+  fontStyle: 'italic',
+  my: 3,
+  ...fontSizeSx,
+  textAlign: { xs: 'center', md: 'left' },
+  fontWeight: { xs: 'bold', md: 'normal' },
+};
+
 const AIMS = `"We aim to meet your cleaning needs."`;
 const BRANDING = 'CDR Cleaning Services';
 const EMAIL = `cdrcleaningservices1111@gmail.com`;
@@ -108,12 +148,20 @@ const App = () => {
         <Typography 
           variant="h3" 
           component="h1" 
-          sx={containerSx}
+          sx={{ 
+            ...containerSx, 
+            fontSize: { xs: '1.5rem', md: '2.5rem' },
+          }}
         >
           <CleaningServicesRounded />
           {BRANDING}
         </Typography>
-        <Typography variant="h6" sx={{ color: 'text.secondary' }}>
+        <Typography 
+          variant="h6" 
+          sx={{ 
+            color: 'text.secondary',
+            ...fontSizeSx,
+          }}>
           {MOTTO}
         </Typography>
       </Box>
@@ -124,7 +172,10 @@ const App = () => {
             <Typography 
               variant="h4" 
               component="h2" 
-              sx={serviceTextSx}
+              sx={{
+                ...serviceTextSx,
+                ...fontSizeSx,                
+              }}
             >
               {SERVICE_TYPE}
             </Typography>
@@ -134,10 +185,9 @@ const App = () => {
                 <ListItem key={index} sx={{ py: 1 }}>
                   <ListItemText 
                     primary={text}
-                    primaryTypographyProps={{
-                      fontSize: '1.2rem',
-                      fontWeight: index === 3 ? 'bold' : 'normal'
-                    }}
+                    primaryTypographyProps={
+                      listSx as ListItemTextProps['primaryTypographyProps']
+                    }
                   />
                 </ListItem>
               ))}
@@ -145,10 +195,7 @@ const App = () => {
 
             <Typography 
               variant="h6" 
-              sx={{ 
-                fontStyle: 'italic',
-                my: 3
-              }}
+              sx={aimSx}
             >
               {AIMS}
             </Typography>
@@ -157,17 +204,24 @@ const App = () => {
           <Box sx={imageSx}>
             <img
               src={ImageFile}
-              alt="Cleaning supplies"
-              width={'400px'}
-              height={'400px'}
-              
+              alt="Cleaning supplies"              
             />
           </Box>
         </Box>
       </Card>
 
       <Card sx={card2Sx}>
-        <Typography variant="h5" sx={{ mb: 3, textAlign: 'center' }}>
+        <Typography 
+          variant="h5" 
+          sx={{ 
+            mb: 3, 
+            textAlign: 'center',
+            fontSize:  theme => ({ 
+              xs: `${theme.typography.h6.fontSize}`, 
+              md: `${theme.typography.h5.fontSize}`,
+             }) 
+            
+          }}>
           {QUOTE}
         </Typography>
         
@@ -185,9 +239,12 @@ const App = () => {
             variant="contained"
             startIcon={<EmailRounded />}
             sx={emailSx}
+            
             href={`mailto:${EMAIL}`}
           >
-            {EMAIL}
+            <Typography>
+              {EMAIL}
+            </Typography>
           </Button>
         </Box>
       </Card>
